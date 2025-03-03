@@ -1,4 +1,4 @@
-interface IResponse {
+export interface IResponse {
     label: string,
     score: number
 }

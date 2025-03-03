@@ -1,3 +1,4 @@
+import { IResponse } from "@/types";
 import { pipeline, env } from "@huggingface/transformers";
 
 env.localModelPath = process.cwd() + "/models";
