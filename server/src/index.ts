@@ -5,6 +5,7 @@ import helmet from 'helmet'
 import rateLimit from 'express-rate-limit'
 import morgan from 'morgan'
 import dotenv from 'dotenv'
+import detectRoutes from '@/routes/detect-routes'
 import nsfwDetector from '@/utils/nsfw-detector'
 
 dotenv.config()
@@ -34,6 +35,8 @@ app.use(morgan('common'));
 app.use(express.json());
 app.use(cookieParser());
 // app.use(limiter);
+
+app.use('/api/detect', detectRoutes)
 
 app.get("/", async (req, res) => {
     try {
