@@ -2,6 +2,7 @@
   "name": "filthcheck",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "rimraf dist && npx tsc",
     "start": "npm run build && node -r tsconfig-paths/register dist/index.js",
