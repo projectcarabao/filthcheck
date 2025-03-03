@@ -1,9 +1,14 @@
-import { IResponse } from "@/types";
-import { pipeline, env } from '@huggingface/transformers';
+
+import { pipeline, env } from "@huggingface/transformers";
 
 env.localModelPath = process.cwd() + "/src/models";
 env.allowLocalModels = true;
 env.allowRemoteModels = false;
+
+interface IResponse {
+    label: string,
+    score: number
+}
 
 const nsfwDetector = async (image: string) => {
 
@@ -24,3 +29,6 @@ const nsfwDetector = async (image: string) => {
 }
 
 export default nsfwDetector
+
+
+
