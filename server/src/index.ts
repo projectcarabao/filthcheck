@@ -5,7 +5,7 @@ import helmet from 'helmet'
 import morgan from 'morgan'
 import dotenv from 'dotenv'
 import rateLimiter from '@/utils/rate-limiter'
-
+import detectRoutes from '@/routes/detect-routes'
 dotenv.config()
 
 const { NODE_PORT, NODE_PUBLIC_DEV_BASE_URL } = process.env
@@ -26,6 +26,8 @@ app.use(morgan('common'));
 app.use(express.json());
 app.use(cookieParser());
 app.use(rateLimiter);
+
+app.use('api/detect', detectRoutes)
 
 app.get('/', (req, res) => {
     res.send('Page not found.')
