@@ -1,11 +1,12 @@
 import { IResponse } from "@/types";
-import { pipeline, env } from "@huggingface/transformers";
-
-env.localModelPath = process.cwd() + "/models";
-env.allowLocalModels = true;
-env.allowRemoteModels = false;
 
 const nsfwDetector = async (image: string) => {
+
+    const { pipeline, env } = await import('@huggingface/transformers');
+
+    env.localModelPath = process.cwd() + "/models";
+    env.allowLocalModels = true;
+    env.allowRemoteModels = false;
 
     try {
         const model = 'NsfwDetector/vit-base-nsfw-detector';
