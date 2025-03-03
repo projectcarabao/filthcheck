@@ -5,7 +5,9 @@ import nsfwDetector from "@/utils/nsfw-detector";
 export const detectImageService = async (request: Request, response: Response) => {
     try {
 
-        const { imageURL } = request.params
+        const { imageURL } = request.body
+
+        if (!imageURL) throw new Error('Image URL is required.');
 
         const response = await nsfwDetector(imageURL);
 
