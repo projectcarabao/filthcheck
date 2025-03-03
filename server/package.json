@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "A server for an NSFW detection application",
   "dependencies": {
+    "@huggingface/transformers": "^3.3.3",
     "@supabase/ssr": "^0.5.2",
     "@supabase/supabase-js": "^2.48.1",
     "@types/morgan": "^1.9.9",
