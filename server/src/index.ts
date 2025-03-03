@@ -2,9 +2,9 @@ import express, { Express } from 'express'
 import cors, { CorsOptions } from 'cors'
 import cookieParser from 'cookie-parser'
 import helmet from 'helmet'
-import rateLimit from 'express-rate-limit'
 import morgan from 'morgan'
 import dotenv from 'dotenv'
+import rateLimiter from '@/utils/rate-limiter'
 
 dotenv.config()
 
@@ -17,13 +17,6 @@ const corsOptions: CorsOptions = {
     allowedHeaders: ["Content-Type", "Authorization"]
 }
 
-const limiter = rateLimit({
-    windowMs: 15 * 60 * 1000,
-    max: 100,
-    message: "Too many requests from this IP, please try again later.",
-    standardHeaders: true,
-    legacyHeaders: false,
-});
 
 const app: Express = express()
 
@@ -32,7 +25,7 @@ app.use(cors(corsOptions));
 app.use(morgan('common'));
 app.use(express.json());
 app.use(cookieParser());
-// app.use(limiter);
+app.use(rateLimiter);
 
 app.get('/', (req, res) => {
     res.send('Page not found.')
