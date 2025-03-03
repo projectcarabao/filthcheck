@@ -2,7 +2,7 @@
 import { Request, Response } from "express"
 import nsfwDetector from "@/utils/nsfw-detector";
 
-export const signInWithEmailService = async (request: Request, response: Response) => {
+export const detectImageService = async (request: Request, response: Response) => {
     try {
 
         const { imageURL } = request.params
