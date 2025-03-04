@@ -11,7 +11,7 @@
   "keywords": [],
   "author": "Joseph Encila",
   "license": "ISC",
-  "description": "A simple blogging web application",
+  "description": "A very simple API for detecting Not Safe For Work (NSFW) image content",
   "dependencies": {
     "@huggingface/transformers": "^3.3.3",
     "@supabase/ssr": "^0.5.2",
