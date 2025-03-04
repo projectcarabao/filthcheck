@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
     res.send('Unauthorized')
 })
 
-app.use('/api/detect', detectRoutes)
+// app.use('/api/detect', detectRoutes)
 
 const port = NODE_PORT || 5000
 app.listen(port, () => {
