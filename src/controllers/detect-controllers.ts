@@ -1,4 +1,4 @@
-import { detectImageService } from "@/services/detect-services";
+import { detectImageService } from "../services/detect-services";
 import { Request, Response } from "express"
 
 
