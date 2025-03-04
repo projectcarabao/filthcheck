@@ -8,7 +8,7 @@
     ],
     "functions": {
       "api/*": {
-        "excludeFiles": ["src/models/**"]
+        "excludeFiles": "src/models/**"
       }
     }
   }
