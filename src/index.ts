@@ -1,5 +1,3 @@
-import "tsconfig-paths/register";
-
 import express, { Express } from 'express'
 import cors, { CorsOptions } from 'cors'
 import cookieParser from 'cookie-parser'
