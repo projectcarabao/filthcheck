@@ -6,7 +6,7 @@ import rateLimit from 'express-rate-limit'
 import morgan from 'morgan'
 import dotenv from 'dotenv'
 
-import detectRoutes from '@/routes/detect-routes.js'
+// import detectRoutes from '@/routes/detect-routes.js'
 
 dotenv.config()
 
@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
     res.send('Unauthorized')
 })
 
-app.use('/api/detect', detectRoutes)
+// app.use('/api/detect', detectRoutes)
 
 const port = NODE_PORT || 5000
 app.listen(port, () => {
