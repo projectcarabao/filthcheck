@@ -1,6 +1,5 @@
 import express, { Express } from 'express'
 import cors, { CorsOptions } from 'cors'
-import cookieParser from 'cookie-parser'
 import helmet from 'helmet'
 import rateLimit from 'express-rate-limit'
 import morgan from 'morgan'
@@ -33,7 +32,6 @@ app.use(helmet());
 app.use(cors(corsOptions));
 app.use(morgan('common'));
 app.use(express.json());
-app.use(cookieParser());
 // app.use(limiter);
 
 app.get('/', (req, res) => {
