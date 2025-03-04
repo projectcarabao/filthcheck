@@ -36,6 +36,10 @@ app.use(express.json());
 app.use(cookieParser());
 // app.use(limiter);
 
+app.get('/', (req, res) => {
+    res.send('Unauthorized')
+})
+
 app.use('/api/detect', detectRoutes)
 
 const port = NODE_PORT || 5000
